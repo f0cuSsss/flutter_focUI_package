@@ -237,6 +237,32 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                         onTapped: () {},
                       ),
                     ),
+                    hSpaceRegular,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: fGetPercentWidth(context, percentage: 20.0),
+                        vertical: 0,
+                      ),
+                      child: fBoxButton(
+                        title: 'Send report',
+                        height: 65,
+                        leadingIcon: const Icon(Icons.send),
+                        onTapped: () {},
+                      ),
+                    ),
+                    hSpaceRegular,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: fGetPercentWidth(context, percentage: 20.0),
+                        vertical: 0,
+                      ),
+                      child: fBoxButton(
+                        title: 'Send report',
+                        height: 65,
+                        trailingIcon: const Icon(Icons.send),
+                        onTapped: () {},
+                      ),
+                    ),
                   ],
                 ),
                 hSpaceMedium,
