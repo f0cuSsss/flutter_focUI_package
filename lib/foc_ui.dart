@@ -1,7 +1,19 @@
 library foc_ui;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+/* 
+===================================================
+====================== UI =========================
+=================================================== 
+*/
+export 'ui/f_text.dart';
+export 'ui/f_input_field.dart';
+
+/* 
+===================================================
+=============== UTILS ===============
+=================================================== 
+*/
+export 'utils/form.dart';
+export 'utils/screen_helpers.dart';
+export 'utils/spacing.dart';
+export 'utils/validations.dart';
