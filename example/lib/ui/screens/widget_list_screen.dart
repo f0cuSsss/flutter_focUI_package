@@ -14,6 +14,9 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
   final _passwordController = TextEditingController();
   bool hidePassword = true;
 
+  bool checkboxValue1 = false;
+  bool checkboxValue2 = false;
+
   final _formKey = GlobalKey<FormState>();
 
   final _loginFocus = FocusNode();
@@ -60,6 +63,8 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                 // Input fields
                 Column(
                   children: [
+                    fText.heading4('Input fields', context: context),
+                    hSpaceSmall,
                     fInputField(
                       controller: _loginController,
                       placeholder: 'Login',
@@ -99,6 +104,8 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                 // Buttons
                 Column(
                   children: [
+                    fText.heading4('Box buttons', context: context),
+                    hSpaceSmall,
                     fBoxButton(
                       title: 'Submit',
                       focusNode: _btnFocus,
@@ -238,7 +245,7 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                 // Menu buttons
                 Column(
                   children: [
-                    fText.heading4('Menu', context: context),
+                    fText.heading4('Menu buttons', context: context),
                     hSpaceRegular,
                     fNeoMenuButton(
                       title: 'Profile',
@@ -277,6 +284,8 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                 // Oval buttons
                 Column(
                   children: [
+                    fText.heading4('Oval buttons', context: context),
+                    hSpaceSmall,
                     fOvalButton(
                       title: 'Text',
                       onTapped: () {},
@@ -316,6 +325,8 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                 // Text
                 Column(
                   children: [
+                    fText.heading4('Text', context: context),
+                    hSpaceSmall,
                     fText.heading1('Heading 1', context: context),
                     fText.heading2('Heading 2', context: context),
                     fText.heading3('Heading 3', context: context),
@@ -342,7 +353,35 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                     ),
                   ],
                 ),
-                hSpaceRegular,
+                hSpaceMedium,
+                const Divider(),
+                // Checkboxes
+                Column(
+                  children: [
+                    fText.heading4('Checkboxes', context: context),
+                    hSpaceSmall,
+                    fCheckbox(
+                      title: 'Click to check me :) [text don\'t clickable]',
+                      selectedColor: Colors.purpleAccent,
+                      selected: checkboxValue1,
+                      checkHandler: (value) {
+                        setState(() => checkboxValue1 = value!);
+                      },
+                    ),
+                    hSpaceRegular,
+                    fCheckbox(
+                      title: 'Click to check me :) [text clickable]',
+                      selectedColor: Colors.purpleAccent,
+                      selected: checkboxValue2,
+                      clickable: true,
+                      checkHandler: (value) {
+                        setState(() => checkboxValue2 = value!);
+                      },
+                    ),
+                  ],
+                ),
+                hSpaceMedium,
+                const Divider(),
               ],
             ),
           ),
