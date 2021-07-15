@@ -9,84 +9,92 @@ class fText extends StatelessWidget {
   ================== Heading ====================
   ============================================ */
   /// Extremely large text.
-  // ignore: use_key_in_widget_constructors
-  fText.heading1(this.text, {required context})
-      : style = Theme.of(context).textTheme.headline1;
+  fText.heading1(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.headline1,
+        super(key: key);
 
   /// Very, very large text.
   /// Used for the date in the dialog shown by [showDatePicker].
-  // ignore: use_key_in_widget_constructors
-  fText.heading2(this.text, {required context})
-      : style = Theme.of(context).textTheme.headline2;
+  fText.heading2(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.headline2,
+        super(key: key);
 
   /// Very large text.
-  // ignore: use_key_in_widget_constructors
-  fText.heading3(this.text, {required context})
-      : style = Theme.of(context).textTheme.headline3;
+  fText.heading3(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.headline3,
+        super(key: key);
 
   /// Large text.
-  // ignore: use_key_in_widget_constructors
-  fText.heading4(this.text, {required context})
-      : style = Theme.of(context).textTheme.headline4;
+  fText.heading4(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.headline4,
+        super(key: key);
 
   /// Used for large text in dialogs (e.g., the month and year in the dialog shown by [showDatePicker]).
-  // ignore: use_key_in_widget_constructors
-  fText.heading5(this.text, {required context})
-      : style = Theme.of(context).textTheme.headline5;
+  fText.heading5(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.headline5,
+        super(key: key);
 
   /// Used for the primary text in app bars and dialogs (e.g., [AppBar.title] and [AlertDialog.title]).
-  // ignore: use_key_in_widget_constructors
-  fText.heading6(this.text, {required context})
-      : style = Theme.of(context).textTheme.headline6;
+  fText.heading6(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.headline6,
+        super(key: key);
 
   /* ============================================
   ================== Subtitle ====================
   ============================================ */
   /// Used for the primary text in lists (e.g., [ListTile.title]).
-  // ignore: use_key_in_widget_constructors
-  fText.subtitle1(this.text, {required context})
-      : style = Theme.of(context).textTheme.subtitle1;
+  fText.subtitle1(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.subtitle1,
+        super(key: key);
 
   /// For medium emphasis text that's a little smaller than [subtitle1].
-  // ignore: use_key_in_widget_constructors
-  fText.subtitle2(this.text, {required context})
-      : style = Theme.of(context).textTheme.subtitle2;
+  fText.subtitle2(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.subtitle2,
+        super(key: key);
 
   /* ============================================
   ================== Body text ====================
   ============================================ */
   /// Used for emphasizing text that would otherwise be [bodyText2].
-  // ignore: use_key_in_widget_constructors
-  fText.bodyText1(this.text, {required context})
-      : style = Theme.of(context).textTheme.bodyText1;
+  fText.bodyText1(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.bodyText1,
+        super(key: key);
 
   /// The default text style for [Material].
-  // ignore: use_key_in_widget_constructors
-  fText.bodyText2(this.text, {required context})
-      : style = Theme.of(context).textTheme.bodyText2;
+  fText.bodyText2(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.bodyText2,
+        super(key: key);
 
   /* ============================================
   ================== Other ====================
   ============================================ */
   /// Used for auxiliary text associated with images.
-  // ignore: use_key_in_widget_constructors
-  fText.caption(this.text, {required context})
-      : style = Theme.of(context).textTheme.caption;
+  fText.caption(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.caption,
+        super(key: key);
 
   /// Used for text on [ElevatedButton], [TextButton] and [OutlinedButton].
-  // ignore: use_key_in_widget_constructors
-  fText.button(this.text, {required context})
-      : style = Theme.of(context).textTheme.button;
+  fText.button(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.button,
+        super(key: key);
+
+  /// Used for text on [ElevatedButton], [TextButton] and [OutlinedButton].
+  /// With custom TextStyle
+  const fText.buttonStyled(this.text, TextStyle? _style,
+      {Key? key, required context})
+      : style = _style,
+        super(key: key);
 
   /// Text with custom style
-  // ignore: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
-  fText.styled(this.text, TextStyle _style) : style = _style;
+  const fText.styled(this.text, TextStyle _style, {Key? key})
+      : style = _style,
+        super(key: key);
 
   /// The smallest style.
   /// Typically used for captions or to introduce a (larger) headline.
-  // ignore: use_key_in_widget_constructors
-  fText.overline(this.text, {required context})
-      : style = Theme.of(context).textTheme.overline;
+  fText.overline(this.text, {Key? key, required context})
+      : style = Theme.of(context).textTheme.overline,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {

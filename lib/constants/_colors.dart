@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foc_ui/foc_ui.dart';
+
+// const Color kAccent = Color(0xFF17B5C0);
+const Color kAccent = Colors.deepPurple;
 
 const Color kPlaceholderColor = Colors.grey;
 const Color kLabelColor = Colors.grey;
