@@ -57,198 +57,290 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
             child: Column(
               children: [
-                fInputField(
-                  controller: _loginController,
-                  placeholder: 'Login',
-                  label: 'Login',
-                  focusNode: _loginFocus,
-                  onFieldSubmitted: (_) => fieldFocusChange(
-                    context,
-                    _loginFocus,
-                    _passwordFocus,
-                  ),
-                  validatorCallback: (login) => validateLogin(login),
-                ),
-                hSpaceRegular,
-                fInputField(
-                  controller: _passwordController,
-                  placeholder: 'Password',
-                  focusNode: _passwordFocus,
-                  isPassword: hidePassword,
-                  validatorCallback: (pass) => validatePassword(pass),
-                  onFieldSubmitted: (_) => fieldFocusChange(
-                    context,
-                    _loginFocus,
-                    _btnFocus,
-                  ),
-                  trailing: Icon(
-                    hidePassword ? Icons.visibility : Icons.visibility_off,
-                  ),
-                  trailingTapped: () => setState(
-                    () => hidePassword = !hidePassword,
-                  ),
-                ),
-                hSpaceLarge,
-                fBoxButton(
-                  title: 'Submit',
-                  focusNode: _btnFocus,
-                  onTapped: _submitFormHandler,
-                ),
-                const Divider(),
-                hSpaceRegular,
-                fBoxButton(
-                  title: 'Standart',
-                  onTapped: () {},
-                ),
-                hSpaceRegular,
-                fBoxButton(
-                  title: 'Outline',
-                  outlineColor: Colors.amber,
-                  outlineWidth: 2.0,
-                  onTapped: () {},
-                ),
-                hSpaceRegular,
-                fBoxButton.outline(
-                  title: 'Outline transparent',
-                  outlineColor: Colors.black26,
-                  onTapped: () {},
-                  textStyle: Theme.of(context)
-                      .textTheme
-                      .button
-                      ?.copyWith(color: Colors.black87),
-                  isTransparent: true,
+                // Input fields
+                Column(
+                  children: [
+                    fInputField(
+                      controller: _loginController,
+                      placeholder: 'Login',
+                      label: 'Login',
+                      focusNode: _loginFocus,
+                      onFieldSubmitted: (_) => fieldFocusChange(
+                        context,
+                        _loginFocus,
+                        _passwordFocus,
+                      ),
+                      validatorCallback: (login) => validateLogin(login),
+                    ),
+                    hSpaceRegular,
+                    fInputField(
+                      controller: _passwordController,
+                      placeholder: 'Password',
+                      focusNode: _passwordFocus,
+                      isPassword: hidePassword,
+                      validatorCallback: (pass) => validatePassword(pass),
+                      onFieldSubmitted: (_) => fieldFocusChange(
+                        context,
+                        _loginFocus,
+                        _btnFocus,
+                      ),
+                      trailing: Icon(
+                        hidePassword ? Icons.visibility : Icons.visibility_off,
+                      ),
+                      trailingTapped: () => setState(
+                        () => hidePassword = !hidePassword,
+                      ),
+                    ),
+                  ],
                 ),
                 hSpaceMedium,
-                fBoxButton(
-                  title: 'Styled',
-                  onTapped: () {},
-                  textStyle: Theme.of(context)
-                      .textTheme
-                      .button
-                      ?.copyWith(color: Colors.white, fontSize: 20),
+                const Divider(),
+                hSpaceMedium,
+                // Buttons
+                Column(
+                  children: [
+                    fBoxButton(
+                      title: 'Submit',
+                      focusNode: _btnFocus,
+                      onTapped: _submitFormHandler,
+                    ),
+                    const Divider(),
+                    hSpaceRegular,
+                    fBoxButton(
+                      title: 'Standart',
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fBoxButton(
+                      title: 'Outline',
+                      outlineColor: Colors.amber,
+                      outlineWidth: 2.0,
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fBoxButton.outline(
+                      title: 'Outline transparent',
+                      outlineColor: Colors.black26,
+                      onTapped: () {},
+                      textStyle: Theme.of(context)
+                          .textTheme
+                          .button
+                          ?.copyWith(color: Colors.black87),
+                      isTransparent: true,
+                    ),
+                    hSpaceMedium,
+                    fBoxButton(
+                      title: 'Styled',
+                      onTapped: () {},
+                      textStyle: Theme.of(context)
+                          .textTheme
+                          .button
+                          ?.copyWith(color: Colors.white, fontSize: 20),
+                    ),
+                    hSpaceMedium,
+                    fBoxButton(
+                      title: 'Disabled',
+                      disabled: true,
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    const Divider(),
+                    hSpaceRegular,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: fGetPercentWidth(context, percentage: 12.0),
+                        vertical: 0,
+                      ),
+                      child: fBoxButton(
+                        title: 'Add Something',
+                        height: 60,
+                        elevation: 7,
+                        onTapped: () {},
+                        color: Colors.black,
+                        textStyle: Theme.of(context).textTheme.button?.copyWith(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: fGetColorFromBackground(Colors.black),
+                            ),
+                      ),
+                    ),
+                    hSpaceRegular,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: fGetPercentWidth(context, percentage: 12.0),
+                        vertical: 0,
+                      ),
+                      child: fBoxButton(
+                        title: 'Add Something [disabled]',
+                        height: 60,
+                        disabled: true,
+                        elevation: 7,
+                        onTapped: () {},
+                        color: Colors.black,
+                        textStyle: Theme.of(context).textTheme.button?.copyWith(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: fGetColorFromBackground(Colors.black),
+                            ),
+                      ),
+                    ),
+                    hSpaceRegular,
+                    const Divider(),
+                    hSpaceRegular,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: fGetPercentWidth(context, percentage: 8.0),
+                        vertical: 0,
+                      ),
+                      child: fBoxButton(
+                        title: 'Add Something',
+                        height: 70,
+                        borderRadius: 18,
+                        outlineColor: Colors.black.withOpacity(0.15),
+                        elevation: 7,
+                        onTapped: () {},
+                        color: const Color(0xFF11DACC),
+                        textStyle: Theme.of(context).textTheme.button?.copyWith(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600,
+                              color: fGetColorFromBackground(
+                                  const Color(0xFF11DACC)),
+                            ),
+                      ),
+                    ),
+                    hSpaceRegular,
+                    const Divider(),
+                    fBoxButton(
+                      title: 'With icon',
+                      trailingIcon: const Icon(Icons.ac_unit),
+                      leadingIcon: const Icon(Icons.add_alarm),
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: fGetPercentWidth(context, percentage: 20.0),
+                        vertical: 0,
+                      ),
+                      child: fBoxButton(
+                        title: 'Moderate',
+                        height: 65,
+                        leadingIcon: const Icon(Icons.add_moderator),
+                        trailingIcon: const Icon(Icons.arrow_downward),
+                        onTapped: () {},
+                      ),
+                    ),
+                  ],
                 ),
                 hSpaceMedium,
-                fBoxButton(
-                  title: 'Disabled',
-                  disabled: true,
-                  onTapped: () {},
-                ),
-                hSpaceRegular,
                 const Divider(),
-                hSpaceRegular,
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: fGetPercentWidth(context, percentage: 12.0),
-                    vertical: 0,
-                  ),
-                  child: fBoxButton(
-                    title: 'Add Something',
-                    height: 60,
-                    elevation: 7,
-                    onTapped: () {},
-                    color: Colors.black,
-                    textStyle: Theme.of(context).textTheme.button?.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: fGetColorFromBackground(Colors.black),
-                        ),
-                  ),
+                hSpaceMedium,
+                // Menu buttons
+                Column(
+                  children: [
+                    fText.heading4('Menu', context: context),
+                    hSpaceRegular,
+                    fNeoMenuButton(
+                      title: 'Profile',
+                      icon: const Icon(
+                        Icons.account_balance,
+                        color: Colors.white,
+                      ),
+                      iconBackgroundColor: Colors.deepPurple,
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fNeoMenuButton(
+                      title: 'Home',
+                      icon: const Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      iconBackgroundColor: Colors.deepPurple,
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fNeoMenuButton(
+                      title: 'Settings',
+                      icon: const Icon(
+                        Icons.settings,
+                        color: Colors.white,
+                      ),
+                      iconBackgroundColor: Colors.deepPurple,
+                      onTapped: () {},
+                    ),
+                  ],
                 ),
-                hSpaceRegular,
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: fGetPercentWidth(context, percentage: 12.0),
-                    vertical: 0,
-                  ),
-                  child: fBoxButton(
-                    title: 'Add Something [disabled]',
-                    height: 60,
-                    disabled: true,
-                    elevation: 7,
-                    onTapped: () {},
-                    color: Colors.black,
-                    textStyle: Theme.of(context).textTheme.button?.copyWith(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: fGetColorFromBackground(Colors.black),
-                        ),
-                  ),
-                ),
-                hSpaceRegular,
-                const Divider(),
-                hSpaceRegular,
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: fGetPercentWidth(context, percentage: 8.0),
-                    vertical: 0,
-                  ),
-                  child: fBoxButton(
-                    title: 'Add Something',
-                    height: 70,
-                    borderRadius: 18,
-                    outlineColor: Colors.black.withOpacity(0.15),
-                    elevation: 7,
-                    onTapped: () {},
-                    color: const Color(0xFF11DACC),
-                    textStyle: Theme.of(context).textTheme.button?.copyWith(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                          color:
-                              fGetColorFromBackground(const Color(0xFF11DACC)),
-                        ),
-                  ),
-                ),
-                hSpaceRegular,
-                const Divider(),
-                fBoxButton(
-                  title: 'With icon',
-                  trailingIcon: const Icon(Icons.ac_unit),
-                  leadingIcon: const Icon(Icons.add_alarm),
-                  onTapped: () {},
-                ),
-                hSpaceRegular,
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: fGetPercentWidth(context, percentage: 20.0),
-                    vertical: 0,
-                  ),
-                  child: fBoxButton(
-                    title: 'Moderate',
-                    height: 65,
-                    leadingIcon: const Icon(Icons.add_moderator),
-                    trailingIcon: const Icon(Icons.arrow_downward),
-                    onTapped: () {},
-                  ),
-                ),
-                hSpaceRegular,
-                const Divider(),
-                hSpaceRegular,
-                const fNeoMenuButton(),
                 hSpaceMedium,
                 const Divider(),
-                fText.heading1('Heading 1', context: context),
-                fText.heading2('Heading 2', context: context),
-                fText.heading3('Heading 3', context: context),
-                fText.heading4('Heading 4', context: context),
-                fText.heading5('Heading 5', context: context),
-                fText.heading6('Heading 6', context: context),
-                hSpaceRegular,
-                fText.bodyText1('Body text 1', context: context),
-                fText.bodyText2('Body text 2', context: context),
-                hSpaceRegular,
-                fText.subtitle1('Subtitle 1', context: context),
-                fText.subtitle2('Subtitle 2', context: context),
-                hSpaceRegular,
-                fText.caption('Caption', context: context),
-                fText.overline('Overline', context: context),
-                fText.button('Button', context: context),
-                fText.styled(
-                  'Styled text',
-                  const TextStyle(
-                    color: Colors.amberAccent,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                  ),
+                hSpaceMedium,
+                // Oval buttons
+                Column(
+                  children: [
+                    fOvalButton(
+                      title: 'Text',
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fOvalButton(
+                      title: 'T & I',
+                      icon: const Icon(Icons.add_moderator),
+                      textStyle: TextStyle(
+                        color: Colors.white.withOpacity(0.9),
+                        fontSize: 16,
+                      ),
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fOvalButton(
+                      icon: const Icon(Icons.add_moderator),
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fOvalButton(
+                      onTapped: () {},
+                    ),
+                    hSpaceRegular,
+                    fOvalButton(
+                      size: 80,
+                      icon: const Icon(
+                        Icons.add_moderator,
+                        size: 32,
+                      ),
+                      onTapped: () {},
+                    ),
+                  ],
+                ),
+                hSpaceMedium,
+                const Divider(),
+                // Text
+                Column(
+                  children: [
+                    fText.heading1('Heading 1', context: context),
+                    fText.heading2('Heading 2', context: context),
+                    fText.heading3('Heading 3', context: context),
+                    fText.heading4('Heading 4', context: context),
+                    fText.heading5('Heading 5', context: context),
+                    fText.heading6('Heading 6', context: context),
+                    hSpaceRegular,
+                    fText.bodyText1('Body text 1', context: context),
+                    fText.bodyText2('Body text 2', context: context),
+                    hSpaceRegular,
+                    fText.subtitle1('Subtitle 1', context: context),
+                    fText.subtitle2('Subtitle 2', context: context),
+                    hSpaceRegular,
+                    fText.caption('Caption', context: context),
+                    fText.overline('Overline', context: context),
+                    fText.button('Button', context: context),
+                    const fText.styled(
+                      'Styled text',
+                      TextStyle(
+                        color: Colors.amberAccent,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
                 hSpaceRegular,
               ],
