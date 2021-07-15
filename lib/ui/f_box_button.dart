@@ -122,21 +122,21 @@ class fBoxButton extends StatelessWidget {
           //         context: context,
           //       ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (leadingIcon != null) Expanded(flex: 2, child: leadingIcon!),
-              Expanded(
-                flex: 10,
-                child: textStyle == null
-                    ? Center(child: fText.button(title, context: context))
-                    : Center(
-                        child: fText.buttonStyled(
-                          title,
-                          textStyle,
-                          context: context,
-                        ),
+              if (leadingIcon != null) leadingIcon!,
+              vSpaceSmall,
+              textStyle == null
+                  ? Center(child: fText.button(title, context: context))
+                  : Center(
+                      child: fText.buttonStyled(
+                        title,
+                        textStyle,
+                        context: context,
                       ),
-              ),
-              if (trailingIcon != null) Expanded(flex: 2, child: trailingIcon!),
+                    ),
+              vSpaceSmall,
+              if (trailingIcon != null) trailingIcon!,
             ],
           ),
         ),
