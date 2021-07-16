@@ -11,6 +11,7 @@ export 'ui/f_box_button.dart';
 export 'ui/f_neo_menu_button.dart';
 export 'ui/f_oval_button.dart';
 export 'ui/f_checkbox.dart';
+export 'ui/f_switch.dart';
 
 /* 
 ===================================================
