@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:foc_ui/foc_ui.dart';
 
@@ -18,6 +19,15 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
   bool checkboxValue2 = false;
 
   bool switchValue1 = false;
+
+  bool chipIsSelected = false;
+  bool fruit1IsSelected = false;
+  bool fruit2IsSelected = false;
+  bool fruit3IsSelected = false;
+  bool fruit4IsSelected = false;
+  bool fruit5IsSelected = false;
+  bool fruit6IsSelected = false;
+  bool fruit7IsSelected = false;
 
   late fDropdownItem? dropdownSelectedItem;
   late List<fDropdownItem> dropdownItems;
@@ -134,6 +144,7 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                 hSpaceMedium,
                 const Divider(),
                 hSpaceMedium,
+                // Dropdown
                 Column(
                   children: [
                     fText.heading4('Dropdown', context: context),
@@ -390,6 +401,78 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                         size: 32,
                       ),
                       onTapped: () {},
+                    ),
+                  ],
+                ),
+                hSpaceMedium,
+                const Divider(),
+                // Chip buttons
+                Column(
+                  children: [
+                    fText.heading4('Chip buttons', context: context),
+                    hSpaceSmall,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          fChipButton(
+                            title: 'Banana',
+                            isSelected: fruit1IsSelected,
+                            color: Colors.purpleAccent,
+                            onSelect: (value) =>
+                                setState(() => fruit1IsSelected = value),
+                          ),
+                          fChipButton(
+                            title: 'Avocado',
+                            isSelected: fruit2IsSelected,
+                            color: Colors.purpleAccent,
+                            onSelect: (value) =>
+                                setState(() => fruit2IsSelected = value),
+                          ),
+                          fChipButton(
+                            title: 'Grapefruit',
+                            isSelected: fruit3IsSelected,
+                            color: Colors.purpleAccent,
+                            onSelect: (value) =>
+                                setState(() => fruit3IsSelected = value),
+                          ),
+                          fChipButton(
+                            title: 'Kiwi',
+                            isSelected: fruit4IsSelected,
+                            color: Colors.purpleAccent,
+                            onSelect: (value) =>
+                                setState(() => fruit4IsSelected = value),
+                          ),
+                          fChipButton(
+                            title: 'Plum',
+                            isSelected: fruit5IsSelected,
+                            color: Colors.purpleAccent,
+                            onSelect: (value) =>
+                                setState(() => fruit5IsSelected = value),
+                          ),
+                          fChipButton(
+                            title: 'Peach',
+                            isSelected: fruit6IsSelected,
+                            color: Colors.purpleAccent,
+                            onSelect: (value) =>
+                                setState(() => fruit6IsSelected = value),
+                          ),
+                          fChipButton(
+                            title: 'Tangerine',
+                            isSelected: fruit7IsSelected,
+                            color: Colors.purpleAccent,
+                            onSelect: (value) =>
+                                setState(() => fruit7IsSelected = value),
+                          ),
+                        ],
+                      ),
+                    ),
+                    hSpaceSmall,
+                    fChipInputButton(
+                      title: 'Chip input',
+                      isSelected: chipIsSelected,
+                      onSelect: (value) =>
+                          setState(() => chipIsSelected = value),
                     ),
                   ],
                 ),
