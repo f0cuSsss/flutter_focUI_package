@@ -17,6 +17,8 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
   bool checkboxValue1 = false;
   bool checkboxValue2 = false;
 
+  bool switchValue1 = false;
+
   final _formKey = GlobalKey<FormState>();
 
   final _loginFocus = FocusNode();
@@ -387,7 +389,7 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                     fText.heading4('Checkboxes', context: context),
                     hSpaceSmall,
                     fCheckbox(
-                      title: 'Click to check me :) [text don\'t clickable]',
+                      title: 'Click to check me :) [don\'t clickable text]',
                       selectedColor: Colors.purpleAccent,
                       selected: checkboxValue1,
                       checkHandler: (value) {
@@ -396,13 +398,27 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                     ),
                     hSpaceRegular,
                     fCheckbox(
-                      title: 'Click to check me :) [text clickable]',
+                      title: 'Click to check me :) [clickable text]',
                       selectedColor: Colors.purpleAccent,
                       selected: checkboxValue2,
                       clickable: true,
                       checkHandler: (value) {
                         setState(() => checkboxValue2 = value!);
                       },
+                    ),
+                  ],
+                ),
+                hSpaceMedium,
+                const Divider(),
+                Column(
+                  children: [
+                    fText.heading4('Switcher', context: context),
+                    hSpaceSmall,
+                    fSwitch(
+                      title: 'Switch me :)',
+                      value: switchValue1,
+                      onChanged: (val) => setState(() => switchValue1 = val),
+                      selectedColor: Colors.purpleAccent,
                     ),
                   ],
                 ),
