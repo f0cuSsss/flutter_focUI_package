@@ -13,6 +13,8 @@ export 'ui/f_oval_button.dart';
 export 'ui/f_checkbox.dart';
 export 'ui/f_switch.dart';
 export 'ui/f_dropdown.dart';
+export 'ui/f_chip_button.dart';
+export 'ui/f_chip_input_button.dart';
 
 /* 
 ===================================================
