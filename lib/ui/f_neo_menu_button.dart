@@ -43,7 +43,7 @@ class fNeoMenuButton extends StatelessWidget {
       elevation: 10,
       borderRadius: borderRadius,
       child: InkWell(
-        onTap: () {},
+        onTap: onTapped,
         child: Container(
           width: width,
           height: height,
