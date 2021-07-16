@@ -6,6 +6,8 @@ class fDropdown extends StatelessWidget {
   /// Initial text without selected item
   final String placeholder;
 
+  final double borderRadius;
+
   /// Selected item
   final fDropdownItem? selected;
 // ignore: prefer_typing_uninitialized_variables
@@ -21,6 +23,7 @@ class fDropdown extends StatelessWidget {
     required this.selected,
     required this.items,
     required this.onChanged,
+    this.borderRadius = 8.0,
   }) : super(key: key);
 
   @override
@@ -29,7 +32,7 @@ class fDropdown extends StatelessWidget {
       height: 56,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
