@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foc_ui/ui/f_text.dart';
 
 // ignore: camel_case_types
 class fCheckbox extends StatelessWidget {
@@ -51,7 +52,7 @@ class fCheckbox extends StatelessWidget {
         Expanded(
           child: GestureDetector(
             onTap: () => clickable ? checkHandler(!selected) : () {},
-            child: Text(title),
+            child: fText.bodyText2(title, context: context),
           ),
         ),
       ],
