@@ -12,6 +12,7 @@ export 'ui/f_neo_menu_button.dart';
 export 'ui/f_oval_button.dart';
 export 'ui/f_checkbox.dart';
 export 'ui/f_switch.dart';
+export 'ui/f_dropdown.dart';
 
 /* 
 ===================================================
@@ -31,3 +32,11 @@ export 'utils/color.dart';
 */
 
 export 'constants/_colors.dart';
+
+/* 
+===================================================
+==================== Models =======================
+=================================================== 
+*/
+
+export 'models/f_dropdown_item.dart';
