@@ -19,6 +19,37 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
 
   bool switchValue1 = false;
 
+  late fDropdownItem? dropdownSelectedItem;
+  late List<fDropdownItem> dropdownItems;
+
+  @override
+  void initState() {
+    super.initState();
+    dropdownItems = [
+      fDropdownItem.icon(
+        id: 0,
+        title: 'Add moderator',
+        icon: const Icon(Icons.add_moderator),
+      ),
+      fDropdownItem.icon(
+        id: 1,
+        title: 'Security',
+        icon: const Icon(Icons.security),
+      ),
+      fDropdownItem.icon(
+        id: 2,
+        title: 'Details',
+        icon: const Icon(Icons.details),
+      ),
+      fDropdownItem(
+        id: 2,
+        title: 'Settings',
+      ),
+    ];
+    // dropdownSelectedItem = null;
+    dropdownSelectedItem = dropdownItems[0];
+  }
+
   final _formKey = GlobalKey<FormState>();
 
   final _loginFocus = FocusNode();
@@ -103,6 +134,20 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                 hSpaceMedium,
                 const Divider(),
                 hSpaceMedium,
+                Column(
+                  children: [
+                    fText.heading4('Dropdown', context: context),
+                    hSpaceSmall,
+                    fDropdown(
+                      selected: dropdownSelectedItem,
+                      items: dropdownItems,
+                      onChanged: (fDropdownItem selected) =>
+                          setState(() => dropdownSelectedItem = selected),
+                    ),
+                  ],
+                ),
+                hSpaceMedium,
+                const Divider(),
                 // Buttons
                 Column(
                   children: [
@@ -422,6 +467,7 @@ class _WidgetListScreenState extends State<WidgetListScreen> {
                     ),
                   ],
                 ),
+
                 hSpaceMedium,
                 const Divider(),
               ],
