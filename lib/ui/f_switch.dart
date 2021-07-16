@@ -64,9 +64,8 @@ class _fSwitchState extends State<fSwitch> with SingleTickerProviderStateMixin {
                 height: 28.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24.0),
-                  color: _circleAnimation.value == Alignment.centerLeft
-                      ? Colors.transparent
-                      : widget.selectedColor,
+                  color:
+                      widget.value ? Colors.transparent : widget.selectedColor,
                   border: Border.all(
                     color: widget.selectedColor.withOpacity(0.5),
                     width: 2,
@@ -88,9 +87,8 @@ class _fSwitchState extends State<fSwitch> with SingleTickerProviderStateMixin {
                       height: 20.0,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: _circleAnimation.value == Alignment.centerLeft
-                            ? widget.selectedColor
-                            : Colors.white,
+                        color:
+                            widget.value ? widget.selectedColor : Colors.white,
                       ),
                     ),
                   ),
